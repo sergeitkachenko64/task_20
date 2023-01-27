@@ -1,0 +1,41 @@
+/* Валидатор W3C обнаружил в коде CSS к заданию 18 (task_18) ошибки при подключении шрифтов из локольной папки,
+исправление которых можно отнести к соблюдению требований DRY (устранение повтора кода) */
+
+/* Было: */
+
+@font-face {
+  font-family: NunitoSans-Regular;
+  src: url(/fonts/NunitoSans-Regular.ttf);
+  src: local(NunitoSans-Regular) url(/fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: NunitoSans-Italic;
+  src: url(/fonts/NunitoSans-Italic.ttf);
+  src: local(NunitoSans-Regular) url(/fonts/NunitoSans-Italic.ttf);
+}
+
+@font-face {
+  font-family: YesevaOne-Regular;
+  src: url(/fonts/YesevaOne-Regular.ttf);
+  src: local(YesevaOne-Regular) url(/fonts/YesevaOne-Regular.ttf);
+}
+
+/* Стало: */
+
+@font-face {
+  font-family: NunitoSans-Regular;
+  src: url(/fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: NunitoSans-Italic;
+  src: url(/fonts/NunitoSans-Italic.ttf);
+}
+
+@font-face {
+  font-family: YesevaOne-Regular;
+  src: url(/fonts/YesevaOne-Regular.ttf);
+}
+
+/* -------------------------------------------------------------------------------------- */
